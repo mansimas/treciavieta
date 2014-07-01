@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treciavieta</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div style="float:right;">
+	<%= link_to image_tag("gb.gif", :alt => 'en'), url_for( :locale => 'en' ) %>
+<%= link_to image_tag("lt.gif", :alt => 'lt'), url_for( :locale => 'lt' ) %></div>
+
+<%= yield %>
+
+</body>
+</html>

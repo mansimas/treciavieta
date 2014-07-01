@@ -1,0 +1,4 @@
+class DropBanketsTable < ActiveRecord::Migration
+  def change
+  end
+end

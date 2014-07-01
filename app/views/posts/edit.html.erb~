@@ -1,0 +1,38 @@
+<h1>Editing post</h1>
+
+<%= form_for :post, url: post_path(id: @post.id), method: :patch do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+	  <%= t(:category) %> <br>
+    <%= f.select :category, options_for_select(%w[Vestuves Krikstynos Banketas Seminaras Konferencija Pirtis Kiti_renginiai]) %>
+  </div>
+  <div class="field">
+    Numatoma renginio data<br>
+    <%= f.date_select :begin %>
+  </div>
+
+  <div class="field">
+    Numatomas zmoniu skaicius<br>
+    <%= f.text_field :adult,  
+	    :maxlength=>"2" %>
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', post_path(id: @post.id) %> 
+<%= link_to 'Back', posts_path(id: @post.id) %>

@@ -1,0 +1,272 @@
+<h1>Pasirinkite paslaugas</h1>
+<table><tr>
+	<td>Jusu pasirinkta kategorija:</td>
+	<th><%= @post_category %></th></tr><tr>
+	<td>Pradzia:</td>
+	<th><%= @post_begin %></tr><tr>
+	<td>zmoniu skaicius:</td>
+	<th><%= @post_adults %></th></tr>
+</table><br><br>
+
+<%= form_for(@article) do |f| %>
+<% if @article.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2> <ul>
+  <% @article.errors.full_messages.each do |message| %><li><%= message %></li>
+  <% end %> </ul>
+</div><% end %>
+<div><h3>Patalpu nuomos paslauga</h3></div>
+
+
+
+
+<div id="aside5"><h3 style="padding-left:70px; color:gray;">
+		Uzimtumas</h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+<div>Pastabos:<br>
+ <%= text_area_tag "food1ga", "" %><br>
+ Rengiant svente banketu saleje maksimalus sveciu skaicius 40.<br>
+ Lauko terasoje galimas zmoniu skaicius 50, yra scena muzikantams su sviesos efektais.
+ </div>
+</div>
+<div id="aside4"> <h3> Ikainiai:  (su PVM)</h3>
+<table><tr>
+		<td> Pirmadienis:</td>	      <td>kaina 36 Lt/val</td></tr><tr>
+		<td> Antradienis: </td>       <td>kaina 36 Lt/val</td></tr><tr>
+		<td>  Treciadienis:</td>      <td>kaina 36 Lt/val</td></tr><tr>
+		<td>  Ketvirtadienis:</td>    <td>kaina 48 Lt/val</td></tr><tr>
+		<td>  Penktadienis:</td>      <td>kaina 55 Lt/val</td></tr><tr>
+		<td>  Sestadienis:</td>       <td>kaina 73 Lt/val</td></tr><tr>
+		<td>  Sekmadienis:</td>       <td>kaina 65 Lt/val</td></tr><tr>
+	       	<td>  Svenciu dienomis:</td>  <td>kaina 73 Lt/val</td> </tr>
+</table>
+</div>
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5>Banketu sales su terasa nuomos paslauga<br>konferencijai</h5>
+<table> <tr>
+	 <td><center>Atvykimo data </center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	  <tr><td><center>Isvykimo data</center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	 <tr><td><strong>Uzsakomu vietu skaicius</strong></td>
+	 <td><strong>Kaina</strong></td></tr>
+	 <tr><td><%= f.text_field :food1, :maxlength=>"2", :value => @post_adults %></td>
+	 <td ><center>1000<br></center><%= button_tag "uzsakyti" %></td></tr>
+</table><br><br>
+<div style="width:700px;">
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+ </div> <br>
+
+  
+
+
+<div id="aside5">
+  <h3 style="padding-left:70px; color:gray;">Uzimtumas</h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+ <div>Pastabos:<br>
+  <%= text_area_tag "food1ga", "" %><br>
+  Rengiant svente banketu saleje maksimalus sveciu skaicius 40.<br>
+  Lauko terasoje galimas zmoniu skaicius 50, yra scena muzikantams su sviesos efektais.
+  </div>
+</div>
+<div id="aside4">
+	<h3> Ikainiai:  (su PVM)</h3>
+	<table><tr>
+		<td> Jaunavedziu apartamentai:</td> <td>250Lt/para</td></tr><tr>
+		  <td> Seimyninis 4 vietu kambarys: </td><td>200Lt/para</td></tr><tr>
+	 	 <td> Dvigule lova bendrame kambaryje: </td> <td>40Lt/para</td></tr><tr>
+		 <td>  Dvigule lova bendrame kambaryje: </td><td>25Lt/para</td></tr><tr>
+		 <td>  Lova sveciu namuose "GRANTAS":</td><td> 25Lt/para</td></tr><tr>
+	 </tr></table>
+</div>
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5>Apgyvendinimo paslauga</h5>
+ <table> <tr>
+	 <td><center>Atvykimo data </center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	  <tr><td><center>Isvykimo data</center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	 <tr><td><strong>Uzsakomu vietu skaicius</strong></td>
+	 <td><strong>Kaina</strong></td></tr>
+	 <tr><td><%= f.text_field :food1, :maxlength=>"2", :value => @post_adults %></td>
+	 <td ><center>1000<br></center><%= button_tag "uzsakyti" %></td></tr>
+ </table><br><br>
+ <div style="width:700px;">
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+</div> <br>
+
+
+
+
+
+
+<div id="aside5"><h3 style="padding-left:70px;">Uzimtumas</h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+ <div>Pastabos:<br>
+   <%= f.text_area :food1 %><br><strong>Optimalus sveciu skaicius pirtyje - 12 zmoniu.<br>
+   Uzsakant pirti su kita paslauga(vestuvems, krikstynoms ir t.t.)- pirties uzkurimas-250Lt. </strong>
+ </div>
+</div>
+<div id="aside4"><h3> Ikainiai:  (su PVM)</h3>
+<table><tr>
+		<td></td>
+		<td></td>
+		<td id = bord><strong>08..18val.</strong></td>
+		<td id = bord><strong>18..24val.</strong></td>
+		<td id = bord><strong>00..08val.</strong></td></tr><tr>
+		<td id = bord1>Pirmadienis:</td>
+		<td id = bord1></td><td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Antradienis:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Treciadienis:</td>        
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Ketvirtadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Penktadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>90Lt/val</td></tr><tr>
+		<td id = bord1>Sestadienis:</td> 
+		<td id = bord1></td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>110Lt/val</td>
+		<td id = bord>110Lt/val</td></tr><tr>
+		<td id = bord1>Sekmadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>60Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Svenciu dienomis:</td>
+		<td id = bord1></td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>110Lt/val</td>
+		<td id = bord>110Lt/val</td> </tr>
+</table>
+</div>
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %>Pirties nuoma</h5>
+
+<table> <tr>
+	 <td><center>Atvykimo data </center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	  <tr><td><center>Isvykimo data</center></td>
+	 <td>Valanda</td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	 <tr><td><strong>Uzsakomu vietu skaicius</strong></td>
+	 <td><strong>Kaina</strong></td></tr>
+	 <tr><td><%= f.text_field :food1, :maxlength=>"2", :value => @post_adults %></td>
+	 <td ><center>1000<br></center><%= button_tag "uzsakyti" %></td></tr>
+ </table><br><br>
+ <div style="width:700px;">
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+</div> <br>
+			  
+		 
+
+
+
+
+
+<div style="padding-left:622px;"><h4>Suma: 3000</h4></div>
+
+<div class="field"> <h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %>Maitinimo paslauga</h3>
+<div id="aside1"> <h3> Pasirinktas meniu:</h3>
+<table><tr>
+	<td>Silke su svogunais ir morkomis</td>
+	<th><%= image_tag("fish.jpg", size: "100x50") %></th></tr><tr>
+	<td>Silke file su grybais</td>
+	<th><%= image_tag("fish1.jpg", size: "100x50") %></tr><tr>
+	<td>Idaryta lydeka</td>
+	<th><%= image_tag("fish2.jpg", size: "100x50") %></th></tr><tr>
+	<td>Ausu-liezuvio vyniotinis</td>
+	<th><%= image_tag("fish3.jpg", size: "100x50") %></th></tr>
+</table>
+</div>
+
+
+<%= f.radio_button :food, @food_minimal %>60 Lt/zmogui,  (minimalus tradicinis lietuviskas meniu) <br>
+<%= f.radio_button :food, @food_medium %>80 Lt/zmogui,  (optimalus tradicinis lietuviskas meniu) <br>
+<%= f.radio_button :food, @food_large %>100 Lt/zmogui,  (vegetariskas tradicinis lietuviskas meniu) <br>
+<%= f.radio_button :food, @food_huge %>120 Lt/zmogui,  (japoniskas tradicinis lietuviskas meniu) <br>
+</div>
+
+<div class="field"> <h3> <%= check_box_tag "pasirinkimas[]", "pasirinkimai" %>Aptarnavimas</h3>
+<%= f.radio_button :delivery, 60, :checked => true %>uz 60 Lt<br>
+<%= f.radio_button :delivery, 100 %>uz 100 Lt<br>
+<%= f.radio_button :delivery, 150 %>uz 150 Lt<br>
+<%= f.radio_button :delivery, 200 %>uz 200 Lt<br>
+</div>
+<div class="field"> <h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %>Tradicijos</h3>
+<%= f.radio_button :tradition, 60, :checked => true %>uz 60 Lt<br>
+<%= f.radio_button :tradition, 100 %>uz 100 Lt<br>
+<%= f.radio_button :tradition, 150 %>uz 150 Lt<br>
+<%= f.radio_button :tradition, 200 %>uz 200 Lt<br>
+</div>
+<div class="actions"><%= f.submit %>
+</div>
+<% end %>
+
+
+

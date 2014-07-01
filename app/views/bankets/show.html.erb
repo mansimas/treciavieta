@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @banket.arrival %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @banket.departure %>
+</p>
+
+<p>
+  <strong>Places:</strong>
+  <%= @banket.places %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @banket.price %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @banket.post %>
+</p>
+
+<%= link_to 'Edit', edit_banket_path(@banket) %> |
+<%= link_to 'Back', bankets_path %>

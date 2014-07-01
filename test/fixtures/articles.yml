@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  food: MyString
+  delivery: MyString
+  tradition: MyString
+  post_id: 
+
+two:
+  food: MyString
+  delivery: MyString
+  tradition: MyString
+  post_id: 

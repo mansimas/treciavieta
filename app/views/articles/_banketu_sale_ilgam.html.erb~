@@ -1,0 +1,16 @@
+
+<div id="aside4"> <h3> Ikainiai:  (su PVM)</h3>
+<table><tr>
+		<td> <%= t(:monday) %>:</td>	      <td><%= t(:price) %> 36 Lt/<%= t(:h) %></td></tr><tr>
+		<td> <%= t(:tuesday) %>: </td>       <td><%= t(:price) %> 36 Lt/<%= t(:h) %></td></tr><tr>
+		<td>  <%= t(:wednesday) %>:</td>      <td><%= t(:price) %> 36 Lt/<%= t(:h) %></td></tr><tr>
+		<td>  <%= t(:thursday) %>:</td>    <td><%= t(:price) %> 48 Lt/<%= t(:h) %></td></tr><tr>
+		<td>  <%= t(:friday) %>:</td>      <td><%= t(:price) %> 55 Lt/<%= t(:h) %></td></tr><tr>
+		<td>  <%= t(:saturday) %>:</td>       <td><%= t(:price) %> 73 Lt/<%= t(:h) %></td></tr><tr>
+		<td>  <%= t(:sunday) %>:</td>       <td><%= t(:price) %> 65 Lt/<%= t(:h) %></td></tr><tr>
+	       	<td>  <%= t(:holidays) %>:</td>  <td><%= t(:price) %> 73 Lt/<%= t(:h) %></td> </tr>
+</table>
+</div>
+
+
+

@@ -1,0 +1,46 @@
+<h1><%= t(:choose_services) %></h1>
+<table><tr>
+  <td><%= t(:your_chosen_category) %></td>   <th><%= @post_category %></th></tr><tr>
+  <td><%= t(:beginning) %></td>              <th><%= @post_begin %></th>   </tr><tr>
+  <td><%= t(:people_count) %></td>           <th><%= @post_adults %></th>  </tr>
+</table><br><br>
+
+<%= form_for(@article) do |f| %>  <% if @article.errors.any? %>  <div id="error_explanation">
+<h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2> <ul>
+<% @article.errors.full_messages.each do |message| %><li><%= message %></li><% end %> </ul></div><% end %>
+
+<div><h3>Patalpu nuomos paslauga</h3></div>
+
+<% if @post_category == t("wedding") %>
+  <%= render :partial => 'banketu_sale_ilgam', :locals => { :f => f} %>
+  <%= render :partial => 'apgyvendinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'pirties_nuoma', :locals => { :f => f} %>
+  <%= render :partial => 'maitinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'aptarnavimas', :locals => { :f => f} %>
+  <%= render :partial => 'tradicijos', :locals => { :f => f} %>
+<% end %>
+
+<% if @post_category == t("banquet") %>
+  <%= render :partial => 'banketu_sale_ilgam', :locals => { :f => f} %>
+  <%= render :partial => 'apgyvendinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'pirties_nuoma', :locals => { :f => f} %>
+  <%= render :partial => 'maitinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'aptarnavimas', :locals => { :f => f} %>
+  <%= render :partial => 'tradicijos', :locals => { :f => f} %>
+<% end %>
+
+<% if @post_category == t("christening") %>
+  <%= render :partial => 'banketu_sale_trumpam', :locals => { :f => f} %>
+  <%= render :partial => 'apgyvendinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'pirties_nuoma', :locals => { :f => f} %>
+  <%= render :partial => 'maitinimo_paslauga', :locals => { :f => f} %>
+  <%= render :partial => 'aptarnavimas', :locals => { :f => f} %>
+  <%= render :partial => 'tradicijos', :locals => { :f => f} %>
+<% end %>
+
+
+
+
+<div class="actions"><%= f.submit %></div>
+<% end %>
+

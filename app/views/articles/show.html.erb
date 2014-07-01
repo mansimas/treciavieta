@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @article.food %>
+</p>
+
+<p>
+  <strong>Delivery:</strong>
+  <%= @article.delivery %>
+</p>
+
+<p>
+  <strong>Tradition:</strong>
+  <%= @article.tradition %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @article.post %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

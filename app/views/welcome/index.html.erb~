@@ -1,0 +1,2 @@
+Sveiki, pasirinkite uzklausa
+<%= link_to 'Uzklausa', new_post_path %>

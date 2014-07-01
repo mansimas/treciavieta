@@ -1,0 +1,57 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#aside1 {
+margin-left: 800px;
+border:1px solid black;
+position: absolute;
+padding: 10px;
+padding-top: 0px;
+width: 350px;
+}
+#aside2 {
+margin-left: 700px;
+position: absolute;
+padding: 10px;
+padding-top: 0px;
+width: 350px;
+height: 200px;
+}
+#aside3 {
+margin-left: 420px;
+position: absolute;
+padding: 0px;
+padding-top: 0px;
+width: 300px;
+height: 100px;
+}
+#aside4 {
+margin-left: 330px;
+position: absolute;
+padding: 0px;
+padding-top: 0px;
+width: 300px;
+height: 100px;
+}
+#aside5 {
+margin-left: 700px;
+position: absolute;
+padding: 10px;
+padding-top: 0px;
+width: 350px;
+height: 200px;
+}
+#aside6 {
+margin-left: 380px;
+position: absolute;
+padding: 10px;
+padding-top: 0px;
+width: 350px;
+height: 200px;
+}
+#bord {
+
+}
+#bord1 {
+
+}

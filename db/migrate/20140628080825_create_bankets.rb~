@@ -1,0 +1,17 @@
+class CreateBankets < ActiveRecord::Migration
+  def up
+    create_table :bankets do |t|
+      t.date :arrival
+      t.integer :arrival_hour
+      t.date :departure
+      t.integer :departure_hour
+      t.integer :places
+      t.references :post, index: true
+
+      t.timestamps
+    end
+  end
+  def down
+	 drop_table :bankets
+  end
+end

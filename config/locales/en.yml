@@ -1,0 +1,107 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  form_title: Please fill in the form
+  category: Please choose the category
+  choose_event: Please choose event date
+  choose_event_end: Please choose event ending
+  choose_people: Please choose people count
+  new_post_submit: Submit
+  wedding: Wedding
+  christening: Baptism
+  banquet: Banquet
+  seminar: Seminar
+  conference: Conference
+  bath: Bath
+  other_events: Other events
+  prohibited_this_post_from_being_saved: Wrong filled post
+  h: h
+  person: person
+  for: for
+
+
+###############   Heading  #################
+  choose_services: Choose services
+  your_chosen_category: Your chosen category
+  beginning: Beginning
+  ending: Ending
+  finish: Finish
+  people_count: People count
+  
+###############   Banquet hall with terasse  #################
+  busyness: Busyness
+  notes: Notes
+  notes_text_one_row1: Preparing the feast in banquet hall maximum guest count is 40.
+  notes_text_one_row2: The outdoor terrace is available for 50 people, is the scene for musicians with light effects.
+  hall_service: Banquet hall with terrace rental service
+  for_category: for category
+  requesting_number_of_seats: Requesting number of seats
+  arrival: Arrival
+  hour: Hour
+  departure: Departure
+  price: Price
+  order: Order
+  accomodation_service: Accomodation service
+  notes_text_two_row1: Bridal suite - 100m from the banquet hall
+  notes_text_two_row2: Guest house "Grant" - 200m from the banquet hall
+  notes_text_two_row3: Family Room with 4 seats and beds are above banquet hall
+  tariff: Tariff
+  with_pvm: with VAT 
+  bridal_suite: Bridal suite
+  family_room_4_seats: Family room with 4 seats
+  double_bed_in_general_room: Double bed in general room
+  single_bed_in_general_room: Single bed in general room
+  bed_in_house_grant: Bed in guest house "GRANTAS"
+  day: day
+  bath_for_rent: Bath for rent
+  notes_text_three_row1: The optimum number of guests in a sauna - 12 people.
+  notes_text_three_row2: When ordering a bathhouse with other services (weddings, baptisms, etc.) - the sauna to heat-250Lt.
+  monday: monday
+  tuesday: tuesday
+  wednesday: wednesday
+  thursday: thursday
+  friday: friday
+  saturday: saturday
+  sunday: sunday
+  holidays: holidays
+
+  board_service: Board service
+  chosen_menu: Chosen menu
+  herring_with_onions_and_carrots: Herring with onions and carrots
+  herring_fillet_with_mushrooms: Herring fillet with mushrooms
+  the_stuffed_pike: The stuffed pike
+  Ear_tongue_roll: Ear tongue roll
+  minimal_traditional_lithuanian_menu: minimal traditional lithuanian menu
+  optimal_traditional_lithuanian_menu: optimal traditional lithuanian menu
+  vegetarian_traditional_lithuanian_menu: vegetarian traditional lithuanian menu
+  japanese_traditional_lithuanian_menu: japanese traditional lithuanian menu
+  service: Service
+  traditions: Traditions
+  sum: Sum
+
+  chosen_services: Chosen services
+  your_contact_information: Your contact information
+  name: Name
+  surname: Surname
+  phone: Phone
+  mail: Mail
+  additional_information: Additional information

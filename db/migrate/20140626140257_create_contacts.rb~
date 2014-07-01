@@ -1,0 +1,15 @@
+class CreateContacts < ActiveRecord::Migration
+  def change
+    create_table :contacts do |t|
+      t.string :name
+      t.string :lastname
+      t.integer :phone
+      t.email :email
+      t.text :additional_info
+      t.integer :price
+      t.references :post, index: true
+
+      t.timestamps
+    end
+  end
+end

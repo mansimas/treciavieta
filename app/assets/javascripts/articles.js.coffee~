@@ -1,0 +1,2 @@
+$('#task').hide().after('<%= j render("form") %>');
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrival: 2014-06-29 09:11:33
+  departure: 2014-06-29 09:11:33
+  places: 1
+  price: 1
+  post_id: 
+
+two:
+  arrival: 2014-06-29 09:11:33
+  departure: 2014-06-29 09:11:33
+  places: 1
+  price: 1
+  post_id: 

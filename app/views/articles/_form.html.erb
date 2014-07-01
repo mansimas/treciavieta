@@ -1,0 +1,282 @@
+<h1><%= t(:choose_services) %></h1>
+<table><tr>
+  <td><%= t(:your_chosen_category) %></td>   <th><%= @post_category %></th></tr><tr>
+  <td><%= t(:beginning) %></td>              <th><%= @post_begin.to_date %></th>   </tr><tr>
+  <td><%= t(:ending) %></td>              <th><%= @post_end.to_date %></th>   </tr><tr>
+  <td><%= t(:people_count) %></td>           <th><%= @post_people %></th>  </tr>
+</table><br><br>
+
+<%= form_for(@article) do |f| %>  <% if @article.errors.any? %>  <div id="error_explanation">
+<h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2> <ul>
+<% @article.errors.full_messages.each do |message| %><li><%= message %></li><% end %> </ul></div><% end %>
+
+
+
+<% if @post_category == t("wedding") or @post_category == t("banquet") or @post_category == t("christening") %>
+
+
+
+<div id="aside5"><h3 style="padding-left:70px; color:gray;">
+<%= t(:busyness) %></h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+<div><%= t(:notes) %><br>
+ <%= text_area_tag "food1ga", "" %><br>
+  <%= t(:notes_text_one_row1) %><br>
+  <%= t(:notes_text_one_row2) %>
+ </div>
+</div>
+
+
+<% if @post_category == t("wedding") or @post_category == t("banquet")  %>
+<%= render :partial => 'banketu_sale_ilgam', :locals => { :f => f} %>
+<% end %>
+
+<% if @post_category == t("christening") %>
+<%= render :partial => 'banketu_sale_trumpam', :locals => { :f => f} %>
+<% end %>
+
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5><%= t(:hall_service) %><br><%= t(:for_category) %> 
+	    <span style="color:grey; font-size:120%; text-decoration:underline;"><%= @post_category %></span></h5>
+<table style="width:290px;"> 
+	 <tr><td><%= t(:arrival) %><span style="float:right; padding-right:10px;"> <%= t(:hour) %><span></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= f.datetime_select :arrival, discard_minute: true,
+		       :default => @post_begin.to_datetime %></td></tr>
+	 <tr><td><%= t(:departure) %><span style="float:right; padding-right:10px;"> <%= t(:hour) %><span></td></tr>
+			 <tr><td style="border:1px solid gray;"><%= f.datetime_select :departure, discard_minute: true,
+	               :default => @post_end.to_datetime%></td></tr>
+	 <tr><td><strong><%= t(:requesting_number_of_seats) %>
+	               <span style="float:right; padding-right:10px;"> <%= t(:price) %></span></strong></td></tr>
+	 <tr><td><span style="float:right; padding-right:10px;"><%= @price_for_banquet_hall %>
+	 </span><center><%= f.text_field :people, :maxlength=>"2", :value => @post_people %></center></td></tr>
+	 <tr><td style="float:right;"><%= button_tag t(:new_post_submit) %><td></tr>
+		 </table>
+
+<div style="width:700px;">
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+ </div> 
+
+
+<div><h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %><%= t(:accomodation_service) %></h3></div>
+<div id="aside5">
+  <h3 style="padding-left:70px; color:gray;"><%= t(:busyness) %></h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+ <div><%= t(:notes) %>:<br>
+  <%= text_area_tag "food1ga", "" %><br>
+  <%= t(:notes_text_two_row1) %><br>
+  <%= t(:notes_text_two_row2) %><br>
+  <%= t(:notes_text_two_row3) %>
+  </div>
+</div>
+<div id="aside4">
+	<h3> <%= t(:tariff) %>:  (<%= t(:with_pvm) %>)</h3>
+	<table><tr>
+		<td> <%= t(:bridal_suite) %>:</td> 		<td>250Lt/<%= t(:day) %></td></tr><tr>
+		<td> <%= t(:family_room_4_seats) %>:</td>		<td>200Lt/<%= t(:day) %></td></tr><tr>
+	 	<td> <%= t(:double_bed_in_general_room) %>:</td>      <td>40Lt/<%= t(:day) %></td> </tr><tr>
+		<td> <%= t(:single_bed_in_general_room) %>:</td>	<td>25Lt/<%= t(:day) %></td> </tr><tr>
+		<td> <%= t(:bed_in_house_grant) %>:</td>	<td>25Lt/<%= t(:day) %></td> </tr><tr>
+	 </tr></table>
+</div>
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5><%= t(:accomodation_service) %><br><%= t(:for_category) %> <span style="color:grey; font-size:120%; text-decoration:underline;"><%= @post_category %></span></h5>
+ <table> <tr>
+	 <td><center><%= t(:arrival) %></center></td>
+	 <td><%= t(:hour) %></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	  <tr><td><center><%= t(:departure) %></center></td>
+	 <td><%= t(:hour) %></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+ </table><br>
+
+ <div id="aside6", style = "padding-top: 125px;"><strong><%= t(:price) %>:</strong> 1000
+	 <span style = "padding-left:20px;"><%= button_tag t(:order) %></span>
+ </div>
+ <table><tr>
+		 <td> <%= t(:bridal_suite) %></td>
+		 <td><%= select_tag "category", options_for_select(%w[0 1]) %></td>
+		 <td><%= button_tag t(:order) %></td></tr><tr>
+		 <td><%= t(:family_room_4_seats) %></td>
+		 <td><%= select_tag "category", options_for_select(%w[0 1]) %></td>
+		 <td><%= button_tag t(:order) %></td></tr><tr>
+		 <td><%= t(:double_bed_in_general_room) %></td>
+		 <td><%= select_tag "category", options_for_select(%w[0 1 2 3 4 5]) %></td>
+		 <td><%= button_tag t(:order) %></td></tr><tr>
+		 <td><%= t(:single_bed_in_general_room) %></td>
+		 <td><%= select_tag "category", options_for_select(%w[0 1 2 3 4 5 6 7 8 9 10]) %></td>
+		 <td><%= button_tag t(:order) %></td></tr><tr>
+		 <td><%= t(:bed_in_house_grant) %></td>
+		 <td><%= select_tag "category", 
+		  options_for_select(%w[0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]) %></td>
+		 <td><%= button_tag t(:order) %><br></td></tr><tr>
+</table>
+
+ <div style="width:700px;"><br>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+</div> <br>
+
+
+
+<div><h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %><%= t(:bath_for_rent) %></h3></div>
+<div id="aside5"><h3 style="padding-left:70px;"><%= t(:busyness) %></h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+ <div><%= t(:notes) %>:<br>
+   <%= f.text_area :food1 %><br><strong><%= t(:notes_text_three_row1) %><br>
+   <%= t(:notes_text_three_row2) %> </strong>
+ </div>
+</div>
+<div id="aside4"><h3> <%= t(:tariff) %>:  (<%= t(:with_pvm) %>)</h3>
+<table><tr>
+		<td></td>
+		<td></td>
+		<td id = bord><strong>08..18<%= t(:h) %>.</strong></td>
+		<td id = bord><strong>18..24<%= t(:h) %>.</strong></td>
+		<td id = bord><strong>00..08<%= t(:h) %>.</strong></td></tr><tr>
+		<td id = bord1><%= t(:monday) %>:</td>
+		<td id = bord1></td><td id = bord>40Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:tuesday) %>:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:wednesday) %>:</td>        
+		<td id = bord1></td>
+		<td id = bord>40Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:thursday) %>:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:friday) %>:</td>
+		<td id = bord1></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>90Lt/<%= t(:h) %></td>
+		<td id = bord>90Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:saturday) %>:</td> 
+		<td id = bord1></td>
+		<td id = bord>90Lt/<%= t(:h) %></td>
+		<td id = bord>110Lt/<%= t(:h) %></td>
+		<td id = bord>110Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:sunday) %>:</td>
+		<td id = bord1></td>
+		<td id = bord>60Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td>
+		<td id = bord>80Lt/<%= t(:h) %></td></tr><tr>
+		<td id = bord1><%= t(:holidays) %>:</td>
+		<td id = bord1></td>
+		<td id = bord>90Lt/<%= t(:h) %></td>
+		<td id = bord>110Lt/<%= t(:h) %></td>
+		<td id = bord>110Lt/<%= t(:h) %></td> </tr>
+</table>
+</div>
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+<h5><%= t(:bath_for_rent) %> <%= t(:for_category) %> <span style="color:grey; font-size:120%; text-decoration:underline;"><%= @post_category %></span></h5>
+<table> <tr>
+	 <td><center><%= t(:arrival) %></center></td>
+	 <td><%= t(:hour) %></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	  <tr><td><center><%= t(:departure) %></center></td>
+	 <td><%= t(:hour) %></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= date_select "foodas3", "foodas4" %></td>
+	 <td><center><%= select_tag "foodas1",
+	  options_for_select(%w[00 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]) %></center></td></tr>
+	 <tr><td><strong><%= t(:requesting_number_of_seats) %></strong></td>
+	 <td><strong><%= t(:price) %></strong></td></tr>
+	 <tr><td><%= f.text_field :food1, :maxlength=>"2", :value => @post_people %></td>
+	 <td ><center>1000<br></center><%= button_tag t(:order) %></td></tr>
+ </table><br><br><br>
+ <div style="width:700px;">
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ <%= image_tag("namas1.jpg", size: "100x50") %>
+ <%= image_tag("namas2.jpg", size: "100x50") %>
+ </div>
+</div> <br>
+
+
+
+
+<div class="field"> <h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %><%= t(:board_service) %></h3>
+<div id="aside1"> <h3> <%= t(:chosen_menu) %>:</h3>
+<table><tr>
+	<td><%= t(:herring_with_onions_and_carrots) %></td>
+	<th><%= image_tag("fish.jpg", size: "100x50") %></th></tr><tr>
+	<td><%= t(:herring_fillet_with_mushrooms) %></td>
+	<th><%= image_tag("fish1.jpg", size: "100x50") %></tr><tr>
+	<td><%= t(:the_stuffed_pike) %></td>
+	<th><%= image_tag("fish2.jpg", size: "100x50") %></th></tr><tr>
+	<td><%= t(:Ear_tongue_roll) %></td>
+	<th><%= image_tag("fish3.jpg", size: "100x50") %></th></tr>
+</table>
+</div>
+
+
+<%= f.radio_button :food, @food_minimal %>60 Lt/<%= t(:person) %>,  (<%= t(:minimal_traditional_lithuanian_menu) %>) <br>
+<%= f.radio_button :food, @food_medium %>80 Lt/<%= t(:person) %>,  (<%= t(:optimal_traditional_lithuanian_menu) %>) <br>
+<%= f.radio_button :food, @food_large %>100 Lt/<%= t(:person) %>,  (<%= t(:vegetarian_traditional_lithuanian_menu) %>) <br>
+<%= f.radio_button :food, @food_huge %>120 Lt/<%= t(:person) %>,  (<%= t(:japanese_traditional_lithuanian_menu) %>) <br>
+</div>
+
+
+<div class="field"> <h3> <%= check_box_tag "pasirinkimas[]", "pasirinkimai" %><%= t(:service) %></h3>
+<%= f.radio_button :delivery, 60, :checked => true %><%= t(:for) %> 60 Lt<br>
+<%= f.radio_button :delivery, 100 %><%= t(:for) %> 100 Lt<br>
+<%= f.radio_button :delivery, 150 %><%= t(:for) %> 150 Lt<br>
+<%= f.radio_button :delivery, 200 %><%= t(:for) %> 200 Lt<br>
+</div>
+
+
+
+<div class="field"> <h3><%= check_box_tag "pasirinkimas[]", "pasirinkimai" %><%= t(:traditions) %></h3>
+<%= f.radio_button :tradition, 60, :checked => true %><%= t(:for) %> 60 Lt<br>
+<%= f.radio_button :tradition, 100 %><%= t(:for) %> 100 Lt<br>
+<%= f.radio_button :tradition, 150 %><%= t(:for) %> 150 Lt<br>
+<%= f.radio_button :tradition, 200 %><%= t(:for) %> 200 Lt<br>
+</div>
+
+
+
+<div><%= f.submit t(:new_post_submit) %></div>
+<% end %>
+<% end %>
+
+

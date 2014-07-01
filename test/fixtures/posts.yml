@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  begin: 2014-06-26
+  end: 2014-06-26
+  adult: 1
+  children: 1
+
+two:
+  category: MyString
+  begin: 2014-06-26
+  end: 2014-06-26
+  adult: 1
+  children: 1

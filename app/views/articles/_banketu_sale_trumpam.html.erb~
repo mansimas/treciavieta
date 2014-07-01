@@ -1,0 +1,52 @@
+
+
+<div id="aside4"><h3> <%= t(:tariff) %>:  (<%= t(:with_pvm) %>)</h3>
+<table><tr>
+		<td></td>
+		<td></td>
+		<td id = bord><strong>08..18val.</strong></td>
+		<td id = bord><strong>18..24val.</strong></td>
+		<td id = bord><strong>00..08val.</strong></td></tr><tr>
+		<td id = bord1>Pirmadienis:</td>
+		<td id = bord1></td><td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Antradienis:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Treciadienis:</td>        
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Ketvirtadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>40Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Penktadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>90Lt/val</td></tr><tr>
+		<td id = bord1>Sestadienis:</td> 
+		<td id = bord1></td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>110Lt/val</td>
+		<td id = bord>110Lt/val</td></tr><tr>
+		<td id = bord1>Sekmadienis:</td>
+		<td id = bord1></td>
+		<td id = bord>60Lt/val</td>
+		<td id = bord>80Lt/val</td>
+		<td id = bord>80Lt/val</td></tr><tr>
+		<td id = bord1>Svenciu dienomis:</td>
+		<td id = bord1></td>
+		<td id = bord>90Lt/val</td>
+		<td id = bord>110Lt/val</td>
+		<td id = bord>110Lt/val</td> </tr>
+</table>
+</div>
+
+
