@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .img:hover {
     
-    -webkit-transform: scale(7,7);
+    -webkit-transform: scale(8,8);
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 250ms;
-    -moz-transform: scale(7,7);
+    -moz-transform: scale(8,8);
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 250ms;
     position: relative;

@@ -5,7 +5,7 @@
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
-	    <h2><%= t(:prohibited_this_post_from_being_saved) %></h2>
+<h2><%= t(:prohibited_this_post_from_being_saved) %></h2>
 
       <ul>
       <% @post.errors.full_messages.each do |message| %>
@@ -17,15 +17,15 @@
   <div style="width:300px;">
   <div class="field">
   <%= t(:category) %> <br>
-  <%= f.select :category, options_for_select([t("wedding"), t("christening"), t("banquet"), t("seminar"), t("conference"), t("bath"), 	    t("other_events")]) %>
+  <%= f.select :category, options_for_select([t("wedding"), t("christening"), t("banquet")]) %>
   </div>
   <div class="field">
-	  <%= t(:choose_event) %><span style="float:right; padding-right:30px;"><%= t(:hour) %></span><br>
-    <%= f.datetime_select :begin, discard_minute: true, :default => Time.now.to_datetime %>
+	  <%= t(:choose_event) %><br>
+    <%= f.date_select :begin, :default => Time.now.to_date %>
   </div>
   <div class="field">
-    <%= t(:choose_event_end) %><span style="float:right; padding-right:30px;"><%= t(:hour) %></span><br>
-    <%= f.datetime_select :end, discard_minute: true, :default => Time.now.tomorrow.to_datetime %>
+    <%= t(:choose_event_end) %><br>
+    <%= f.date_select :end, :default => Time.now.tomorrow.to_date %>
 
   </div>
 
@@ -35,8 +35,8 @@
 	    :maxlength=>"2", :value => 30 %>
     </div>
     </div>
-  <div class="actions">
-    <%= f.submit t(:new_post_submit) %>
+    <div class="actions">
+	    <%= f.submit t(:new_post_submit) %>
   </div>
 <% end %>
 

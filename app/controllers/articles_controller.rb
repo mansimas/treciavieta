@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
+    @post = Post.find(params[:id]) 
     @article = Article.new
     @post_category = Post.last.category
     @post_begin = Post.last.begin
@@ -207,10 +208,9 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.html { redirect_to new_contact_path(id: @article.id), notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
+        format.js{}
       else
         format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end

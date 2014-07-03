@@ -37,6 +37,22 @@ en:
   h: h
   person: person
   for: for
+  recalculate: Recalculate / save
+  confirm_it: Order
+  Vestuvės: Wedding
+  Krikštynos: Baptism
+  Banketas: Banquet
+  Seminaras: Seminar
+  Konferencija: Conference
+  Pirtis: Bath
+  Kiti renginiai: Other events
+  Banquet: Banketas
+  Seminar: Seminaras
+  Conference: Konferencija
+  Bath: Pirtis
+  Other events: Kiti renginiai
+  back: Back
+  save: Save
 
 
 ###############   Heading  #################

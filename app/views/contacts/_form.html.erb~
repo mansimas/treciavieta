@@ -32,6 +32,6 @@
     <%= f.text_area :additional_info %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t(:new_post_submit) %>
   </div>
 <% end %>

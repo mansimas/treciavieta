@@ -1,0 +1,2 @@
+$("#table").html("<%=j render partial: "new_article", locals:{@price_for_banquet_hall => @price_for_banquet_hall} %>")
+

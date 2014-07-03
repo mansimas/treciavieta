@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
+    @post = Post.find(params[:id]) 
     @article = Article.new
     @post_category = Post.last.category
     @post_begin = Post.last.begin
@@ -171,6 +172,7 @@ class ArticlesController < ApplicationController
 
 		     @mapping_date = (Post.last.begin.tomorrow.to_date..Post.last.end.yesterday.to_date)
 		     @mapping_date_count = @mapping_date.count 
+		     @mapping_date_weekdays = @mapping_date.map{ |date1| date1.wday }
 		     @mapping_date.map do |date|
 			 if date.wday.to_i == 1
 		  		  date = 36*24
@@ -206,7 +208,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.html { redirect_to new_contact_path(id: @article.id), notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }

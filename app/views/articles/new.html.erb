@@ -1,1 +1,17 @@
-<%= render 'form' %>
+<h1><%= t(:choose_services) %></h1>
+<table><tr>
+  <td><%= t(:your_chosen_category) %></td>   <th><%= t(@post_category) %></th></tr><tr>
+  <td><%= t(:beginning) %></td>              <th><%= @post_begin.to_date %></th>   </tr><tr>
+  <td><%= t(:ending) %></td>              <th><%= @post_end.to_date %></th>   </tr><tr>
+  <td><%= t(:people_count) %></td>           <th><%= @post_people %></th>  </tr>
+
+<%= form_for @article, remote: true do |f| %>
+<table id="table">
+<%= f.datetime_select :arrival,  :default => Post.last.begin.to_datetime %>	
+<%= f.datetime_select :departure,  :default => Post.last.end.to_datetime%>
+<%= render :partial => 'middle', :locals => { :post => post } @price_for_banquet_hall %>
+</table>
+<%= f.submit %>
+<% end %>
+
+

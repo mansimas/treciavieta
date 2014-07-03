@@ -6,6 +6,7 @@ scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   resources :contacts
   resources :posts
   get 'welcome/index'
+  get 'post/update2'
 
   root to: 'posts#new'
 end

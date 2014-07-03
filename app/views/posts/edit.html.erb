@@ -1,38 +1,62 @@
-<h1>Editing post</h1>
+<h1><%= t(:choose_services) %></h1>
+<table><tr>
+  <td><%= t(:your_chosen_category) %></td>   <th><%= t(@post_category) %></th></tr><tr>
+  <td><%= t(:beginning) %></td>              <th><%= @post_begin.to_date %></th>   </tr><tr>
+  <td><%= t(:ending) %></td>              <th><%= @post_end.to_date %></th>   </tr><tr>
+  <td><%= t(:people_count) %></td>           <th><%= @post_people %></th>  </tr><tr>
+  <td><% if @post.text? %><%= t(:notes) %><% end %></td>           <th><%= @post.text %></th>  </tr>
+
+</table><br><br>
 
 <%= form_for :post, url: post_path(id: @post.id), method: :patch do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<% if @post.errors.any? %>  <div id="error_explanation">
+<h2><%= pluralize(@post.errors.count, "error") %> prohibited this article from being saved:</h2> <ul>
+<% @post.errors.full_messages.each do |message| %><li><%= message %></li><% end %> </ul></div><% end %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-	  <%= t(:category) %> <br>
-    <%= f.select :category, options_for_select(%w[Vestuves Krikstynos Banketas Seminaras Konferencija Pirtis Kiti_renginiai]) %>
-  </div>
-  <div class="field">
-    Numatoma renginio data<br>
-    <%= f.date_select :begin %>
-  </div>
+<div id="aside5"><h3 style="padding-left:70px; color:gray;">
+<%= t(:busyness) %></h3><%= image_tag("calendar1.jpg", size: "250x180") %>
+<div><%= t(:notes) %><br>
+ <%= f.text_area :text %><%= f.submit t(:save) %><br>
+  <%= t(:notes_text_one_row1) %><br>
+  <%= t(:notes_text_one_row2) %>
+ </div>
+</div>
 
-  <div class="field">
-    Numatomas zmoniu skaicius<br>
-    <%= f.text_field :people,  
-	    :maxlength=>"2" %>
-    
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<%= render :partial => 'articles/banketu_sale_ilgam', :locals => { :f => f} %>
+
+<div style="padding-left:20px; border:2px solid gray; width: 1050px;">
+	<h5><%= t(:hall_service) %><br><%= t(:for_category) %> 
+	    <span style="color:grey; font-size:120%; text-decoration:underline;"><%= t(@post_category) %></span></h5>
+<table style="width:290px;"> 
+	 <tr><td><%= t(:arrival) %><span style="float:right; padding-right:10px;"> <%= t(:hour) %><span></td></tr>
+	 <tr><td style="border:1px solid gray;"><%= f.datetime_select :begin, discard_minute: true,
+		       :default => @post_begin.to_datetime %></td></tr>
+	 <tr><td><%= t(:departure) %><span style="float:right; padding-right:10px;"> <%= t(:hour) %><span></td></tr>
+			 <tr><td style="border:1px solid gray;"><%= f.datetime_select :end, discard_minute: true,
+	               :default => @post_end.to_datetime%></td></tr>
+	 <tr><td><strong><%= t(:requesting_number_of_seats) %>
+	               <span style="float:right; padding-right:10px;"> <%= t(:price) %></span></strong></td></tr>
+	 <tr><td><span style="float:right; padding-right:10px;"><%= @price_for_banquet_hall %>
+	 </span><center><%= f.text_field :people, :maxlength=>"2", :value => @post_people %></center></td></tr>
+	 <tr><td style="float:right;"><%= f.submit t(:recalculate) %><td></tr>
+		 </table><br>
+
+<div style="width:700px; height: 100px;">
+ <%= image_tag("pirtis1.jpg", size: "100x50", class: "img") %>
+ <%= image_tag("pirtis2.jpg", size: "100x50", class: "img") %>
+ <%= image_tag("pirtis3.jpg", size: "100x50", class: "img") %>
+ <%= image_tag("pirtis4.jpg", size: "100x50", class: "img") %>
+ <%= image_tag("pirtis5.jpg", size: "100x50", class: "img") %>
+ </div>
+ </div> 
+ <br>
+<%= button_tag(:type => 'button') do %>
+<%= link_to t(:new_post_submit), new_contact_path(id: @post.id) %>
 <% end %>
 
 
-<%= link_to 'Show', post_path(id: @post.id) %> 
-<%= link_to 'Back', posts_path(id: @post.id) %>
+<% end %>
+<%= link_to t(:back), new_post_path %>
+

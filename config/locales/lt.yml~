@@ -223,18 +223,28 @@ lt:
   choose_people: Numatomas žmonių skaičius
   new_post_submit: Patvirtinti
   wedding: Vestuvės
+  Wedding: Vestuvės
   christening: Krikštynos
+  Christening: Krikštynos
   banquet: Banketas
   seminar: Seminaras
   conference: Konferencija
   bath: Pirtis
   other_events: Kiti renginiai
+  Banquet: Banketas
+  Seminar: Seminaras
+  Conference: Konferencija
+  Bath: Pirtis
+  Other events: Kiti renginiai
   prohibited_this_post_from_being_saved: Netinkamai užpildytas laukelis
-
+  recalculate: perskaičiuoti / išsaugoti
+  confirm_it: Užsakyti
+  back: Atgal
 ###############   Heading  #################
   choose_services: Pasirinkite paslaugas
   your_chosen_category: Jūsų pasirinkta kategorija
   beginning: Pradžia
+  ending: Pabaiga
   finish: Pabaiga
   people_count: Žmonių skaičius
   
@@ -298,7 +308,7 @@ lt:
   name: Vardas
   surname: Pavardė
   phone: Telefonas
-  mail: Emailas
+  mail: El. Paštas
   additional_information: Papildoma informacija
   
 
